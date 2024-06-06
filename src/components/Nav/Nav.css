@@ -1,0 +1,27 @@
+.navbar {
+    color: #3bba9c;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 20px;
+    width: 100%;
+    margin: 0 auto;
+  }
+  
+  h2 {
+    color: #3bba9c;
+    font-weight: 600;
+  }
+  
+  .nav-link {
+    text-decoration: none;
+    color: #2e3047;
+    margin-right: 20px; 
+  
+  }
+  
+  .nav-link:hover {
+    text-decoration: underline;
+    text-decoration-color: #3bba9c; 
+  }
+  
+  
