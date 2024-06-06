@@ -1,16 +1,18 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import CurrencyCard from "../../components/CurrencyCard/CurrencyCard";
-import "./Tracker.css"
+import "./Tracker.css";
 
 const Tracker = () => {
   const [rates, setRates] = useState({});
+  const [isLoading, setIsLoading] = useState(true);
 
   const fetchCurrencies = () => {
     axios
       .get("https://blockchain.info/ticker")
       .then((response) => {
         setRates(response.data);
+        setIsLoading(false);
       })
       .catch((err) => {
         console.log(err);
@@ -25,15 +27,19 @@ const Tracker = () => {
 
   return (
     <div>
-      <div className="currency-grid">
-        {currencies.map((currency) => (
-          <CurrencyCard
-            key={currency}
-            currencyCode={currency}
-            exchangeRates={rates[currency]}
-          />
-        ))}
-      </div>
+      {isLoading ? (
+        <p>Loading...</p>
+      ) : (
+        <div className="currency-grid">
+          {currencies.map((currency) => (
+            <CurrencyCard
+              key={currency}
+              currencyCode={currency}
+              exchangeRates={rates[currency]}
+            />
+          ))}
+        </div>
+      )}
     </div>
   );
 };
