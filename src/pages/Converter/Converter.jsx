@@ -7,6 +7,9 @@ const Converter = () => {
   const [selectedCurrency, setSelectedCurrency] = useState("USD");
   const [convertedAmount, setConvertedAmount] = useState(null);
 
+  // given more time would validate the input better to ignore the behaviour of pressing convert with no given input instead of converting 0
+   // would have also extracted out the dropdowns into a reusable component. At some point would have mapped over all the currencies available on the API instead of a static few
+
   const handleInputChange = (e) => {
     setInputValue(e.target.value);
   };
@@ -38,7 +41,6 @@ const Converter = () => {
                 onChange={handleInputChange}
       />
       <div className="converter-text">
-
       <select onChange={handleCurrencyChange}>
         <option value="USD">{"USD"}</option>
         <option value="GBP">{"GBP"}</option>

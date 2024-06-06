@@ -5,6 +5,8 @@ import Converter from "./pages/Converter/Converter";
 import Nav from "./components/Nav/Nav";
 import Header from "./components/Header/Header";
 
+// would have liked to have implemented activeclassname to highlight the current page in the Nav
+
 function App() {
   return (
     <>

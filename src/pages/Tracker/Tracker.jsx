@@ -8,6 +8,9 @@ const Tracker = () => {
   const [isLoading, setIsLoading] = useState(true);
 
   const fetchCurrencies = () => {
+    // would implement an auto-refresh with more time using setInterval, had thought about storing the value of the last value and comparing it to the refreshed one, then showing an up or down red/green chevron if the rate is better or worse but didn't have time
+    // would also implement a manual refresh button to trigger the function again
+
     axios
       .get("https://blockchain.info/ticker")
       .then((response) => {
@@ -15,6 +18,7 @@ const Tracker = () => {
         setIsLoading(false);
       })
       .catch((err) => {
+        // handle errors here with an error message to the user
         console.log(err);
       });
   };
