@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
+import Form from "../../components/Form/Form";
 
 const Converter = () => {
   const [inputValue, setInputValue] = useState(0);
@@ -31,14 +32,13 @@ const Converter = () => {
 
   return (
     <>
-      <div>
-        <label htmlFor="amount to convert">Amount to Convert</label>
-        <input
-          type="number"
-          name="Conversion Input"
-          onChange={handleInputChange}
-        ></input>
-      </div>
+      <Form type="number" 
+                name="Conversion Input" 
+                placeholder="Amount to convert" 
+                onChange={handleInputChange}
+      />
+      <div className="converter-text">
+
       <select onChange={handleCurrencyChange}>
         <option value="USD">{"USD"}</option>
         <option value="GBP">{"GBP"}</option>
@@ -49,6 +49,7 @@ const Converter = () => {
       </select>
       <button onClick={handleConversion}>Convert</button>
       <p>{convertedAmount} BTC</p>
+      </div>
     </>
   );
 };
