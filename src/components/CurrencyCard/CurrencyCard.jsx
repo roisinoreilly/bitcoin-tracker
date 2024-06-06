@@ -5,7 +5,7 @@ const CurrencyCard = ({ currencyCode, exchangeRates }) => {
     return (
         <section className="currency-card">
             <div className="currency-header">
-                <h2>{currencyCode}</h2>
+                <h3>{currencyCode}</h3>
             </div>
             <div className="currency-details">
                 <p>
